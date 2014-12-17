@@ -1,5 +1,15 @@
 class CashRegister
-  def total
-    0
+  attr_reader :total
+
+  def initialize(total = 0)
+    @total = total
+  end
+
+  def purchase(amount)
+    @total += amount
+  end
+
+  def pay(amount)
+    amount - @total
   end
 end
